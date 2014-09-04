@@ -19,7 +19,7 @@
 -->
 <ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="2384c8ce-6eca-4d06-8aa4-151b53d9a6bc" last-modified="2014-09-03T19:35:19" xmlns="http://schemas.mandiant.com/2010/ioc">
   <short_description>DARWIN (BLOGPOST)</short_description>
-  <description>This IOC contains indicators detailed in the blog post "Darwin's Favorite APT Group" that can be read here: http://www.fireeye.com/blog/technical/targeted-attack/2014/09/darwins-favorite-apt-group.html . This IOC contains indicators for the RIPTIDE and THREEBYTE malware families that are attributed to APT12, and the WATERSPOUT family suspected to be used by APT12.</description>
+  <description>This IOC contains indicators detailed in the blog post "Darwin's Favorite APT Group" that can be read here: http://www.fireeye.com/blog/technical/targeted-attack/2014/09/darwins-favorite-apt-group-2.html . This IOC contains indicators for the RIPTIDE and THREEBYTE malware families that are attributed to APT12, and the WATERSPOUT family suspected to be used by APT12.</description>
   <keywords />
   <authored_by>FireEye</authored_by>
   <authored_date>2014-08-28T15:57:54Z</authored_date>
