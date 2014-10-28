@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          0ff58bf9-1c07-42f6-b135-b18c139f631a.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="0ff58bf9-1c07-42f6-b135-b18c139f631a" last-modified="2014-10-17T20:54:53Z">
+  <short_description>APT28 DOMAINS (REPORT)</short_description>
+  <description>Domains used by APT28.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-10-17T02:04:34Z</authored_date>
+  <links>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT28</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="cfb46234-012a-43c8-a763-f636c056606e" operator="OR">
+      <IndicatorItem id="54481c42-effb-436b-b4d2-cff1cbd09a66" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">kavkazcentr.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b8b742d5-5dff-4f0f-bda8-0c878c1dd1e1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">rnil.am</Content>
+      </IndicatorItem>
+      <IndicatorItem id="af36c9b3-d554-46de-9525-c05a0759a399" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">standartnevvs.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="389c9c03-eaf4-4259-94e5-623334cea26e" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">novinitie.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c17d001c-df89-40ff-87de-e89bde9f1425" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">n0vinite.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="115031bf-f342-4bd0-9f9c-a5d8e1111281" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">qov.hu.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="201da5ba-c327-4e9b-b0af-db1632d742cb" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">q0v.pl</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d69b1fb1-f31e-49e2-9ae1-e4d5057d2142" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">mail.g0v.pl</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7a1dc5b6-f555-44e2-b6a3-efd334183f9c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">poczta.mon.q0v.pl</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ca3b91fe-36ec-4754-97fd-65f36739f4d1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">baltichost.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3b9f2b02-9168-47a8-94b4-cc1f5ec505d4" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">nato.nshq.in</Content>
+      </IndicatorItem>
+      <IndicatorItem id="798874dc-102b-4c5a-bd48-6e07362c7211" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">natoexhibitionff14.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="196515ec-4c17-406b-a067-503a175914ed" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">login-osce.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="63c696e5-a98b-4459-aeea-b88124e6ed29" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">smigroup-online.co.uk</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>

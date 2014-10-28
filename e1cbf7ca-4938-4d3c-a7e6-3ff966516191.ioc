@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          e1cbf7ca-4938-4d3c-a7e6-3ff966516191.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="e1cbf7ca-4938-4d3c-a7e6-3ff966516191" last-modified="2014-10-21T13:08:41Z">
+  <short_description>SOURFACE (REPORT)</short_description>
+  <description>SOURFACE is a downloader that obtains a second-stage backdoor from a C2 server.  Over time the downloader has evolved and the newer versions, usually compiled with the DLL name 'coreshell.dll'.  These variants are distinct from the older versions so we refer to it as SOURFACE/CORESHELL or simply CORESHELL.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-10-16T20:58:21Z</authored_date>
+  <links>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT28</link>
+    <link rel="category">Downloader</link>
+    <link rel="family">SOURFACE</link>
+    <link rel="family">SOURFACE.CORESHELL</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="e16e6299-f75b-4223-8d8d-290cd0bf1b41" operator="OR">
+      <IndicatorItem id="5ea9f200-01f1-411e-94e3-49903f14d6f9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">8c4fa713c5e2b009114adda758adc445</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3f83ca5b-9a2c-4aeb-94ef-28093f6709f8" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">3b0ecd011500f61237c205834db0e13a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3fe4547e-5e19-4bb3-9792-eb382de45eb0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">791428601ad12b9230b9ace4f2138713</Content>
+      </IndicatorItem>
+      <IndicatorItem id="020e58f2-e4f2-4801-b731-d26589bd96b6" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5882fda97fdf78b47081cc4105d44f7c</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b48a7011-59d9-4c53-8d6c-2710d705b0c6" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">48656a93f9ba39410763a2196aabc67f</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9106bde9-52f4-49db-86a1-13f4363bc029" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">9eebfebe3987fec3c395594dc57a0c4c</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8253e6f6-4248-4751-a818-f5d77efd469c" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">8b92fe86c5b7a9e34f433a6fbac8bc3a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b707e318-bb58-4965-be62-a15ccf896891" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ead4ec18ebce6890d20757bb9f5285b1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="51c11809-d0be-45e0-a035-e5d63686e889" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">1259c4fe5efd9bf07fc4c78466f2dd09</Content>
+      </IndicatorItem>
+      <IndicatorItem id="21169314-ed29-4148-a70e-e9798894ea55" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">272f0fde35dbdfccbca1e33373b3570d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="87ba0439-df69-4c21-9013-be773de352ce" condition="contains">
+        <Context document="ProcessItem" search="ProcessItem/SectionList/MemorySection/Name" type="mir"/>
+        <Content type="string">AppData\Local\conhost.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2660589c-6263-44e1-b4de-484db317f93c" condition="contains">
+        <Context document="ProcessItem" search="ProcessItem/SectionList/MemorySection/Name" type="mir"/>
+        <Content type="string">Local Settings\Application Data\conhost.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e3fad633-2b34-4bdb-864e-be495f549e2a" condition="is">
+        <Context document="ProcessItem" search="ProcessItem/SectionList/MemorySection/PEInfo/Exports/DllName" type="mir"/>
+        <Content type="string">coreshell.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="820fc95e-3d6f-4771-a592-fb60811fa0c0" condition="contains">
+        <Context document="ProcessItem" search="ProcessItem/SectionList/MemorySection/Name" type="mir"/>
+        <Content type="string">\netids.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e704246d-ecca-4ac5-82a7-404c93aab893" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Local Settings\Application Data\svchost.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="91b06096-1333-470f-8d49-f408b51d84a1" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Local Settings\Application Data\conhost.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="37148f5b-fff5-4c9e-98aa-f52fb01a3547" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">AppData\Local\svchost.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="09dd2172-ed97-433f-9c59-517161b78b2d" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">AppData\Local\conhost.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="590e7aef-7df8-47cd-916a-360d83f132f5" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">70.85.221.10</Content>
+      </IndicatorItem>
+      <IndicatorItem id="560db24b-1d03-4624-afd9-053e29d75411" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adawareblock.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="41e05024-6c72-49d7-8c19-b533f002124d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">checkmalware.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ba2b02f6-78b8-4589-bd1a-26667f81934f" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">malwarecheck.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="56847ad7-8ede-495f-998e-502ae0040fd6" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">scanmalware.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5fa65919-9467-4de8-9cb7-8574ff86b85d" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">netids.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ec771d67-32c0-4076-8e9f-d9ce6b9f2a80" condition="is" preserve-case="false" negate="false">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">da2a657dc69d7320f2ffc87013f257ad</Content>
+      </IndicatorItem>
+      <Indicator id="f4ea19b8-aa49-49c4-9e09-a3f8be0978c9" operator="AND">
+        <IndicatorItem id="237461bb-942d-44e7-9a39-6cd7c984d357" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+          <Content type="string">svchost.exe</Content>
+        </IndicatorItem>
+        <Indicator id="f58393eb-6a7b-4449-bb81-7b1c264bb506" operator="OR">
+          <IndicatorItem id="1908a844-aba2-4e7c-a230-d53e5e3cd86f" condition="contains">
+            <Context document="ProcessItem" search="ProcessItem/path" type="mir"/>
+            <Content type="string">Local Settings\Application Data</Content>
+          </IndicatorItem>
+          <IndicatorItem id="53f4f3d2-a5d8-41f8-97ec-07551f5e9a57" condition="contains">
+            <Context document="ProcessItem" search="ProcessItem/path" type="mir"/>
+            <Content type="string">AppData\Local</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="0422583c-901a-4a6e-b76a-56cf2944f15c" operator="AND">
+        <IndicatorItem id="b8b22150-54a8-4e6b-9100-dd2168b3bac8" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+          <Content type="string">rundll32.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8232eb12-b4c3-4e14-ba0f-47c92f980e0c" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/arguments" type="mir"/>
+          <Content type="string">#1</Content>
+        </IndicatorItem>
+        <Indicator id="81306107-0655-4161-8916-b760ff0f1b4b" operator="OR">
+          <IndicatorItem id="2ae6dd3a-635a-4693-bff9-736fbe0b0ba9" condition="contains">
+            <Context document="ProcessItem" search="ProcessItem/arguments" type="mir"/>
+            <Content type="string">AppData\Local\conhost.dll</Content>
+          </IndicatorItem>
+          <IndicatorItem id="032324e7-5c17-4720-a7d5-feadf67dc7a3" condition="contains">
+            <Context document="ProcessItem" search="ProcessItem/arguments" type="mir"/>
+            <Content type="string">Local Settings\Application Data\conhost.dll</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="46c94475-6cf7-4783-9cd5-085dc9bb07fe" operator="AND">
+        <IndicatorItem id="ab687935-7364-45da-b3d4-e766b6c96875" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/Exports/NumberOfFunctions" type="mir"/>
+          <Content type="int">1</Content>
+        </IndicatorItem>
+        <Indicator id="c9f0512d-c6f2-4b45-adbd-027e29d7b7dd" operator="OR">
+          <IndicatorItem id="f4303a7f-0b64-4781-b60c-7d5c2d682ee8" condition="is">
+            <Context document="FileItem" search="FileItem/PEInfo/Exports/DllName" type="mir"/>
+            <Content type="string">coreshell.dll</Content>
+          </IndicatorItem>
+          <IndicatorItem id="3b793f77-1818-4db5-ade7-d9e5a499faa6" condition="is">
+            <Context document="FileItem" search="FileItem/PEInfo/Exports/DllName" type="mir"/>
+            <Content type="string">dll.dll</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="025fd9df-c7d3-477b-ab31-925cd2c80d93" operator="OR">
+          <IndicatorItem id="b3f82e05-8f36-4998-91de-ea6085140ef6" condition="is">
+            <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+            <Content type="string">Initialize</Content>
+          </IndicatorItem>
+          <IndicatorItem id="b63715c7-1d4c-490d-8551-6ef9217d322c" condition="is">
+            <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+            <Content type="string">Init1</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ae6a9c14-e0a3-4310-a256-37029a3de66c" condition="is">
+            <Context document="FileItem" search="FileItem/PEInfo/Exports/ExportedFunctions/string" type="mir"/>
+            <Content type="string">Applicate</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator id="c6c6ee00-51f3-4481-bc8f-d28bff04841f" operator="AND">
+        <IndicatorItem id="a6b2fb09-2d7d-48f4-9370-baa70dc9774d" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/VersionInfoList/VersionInfoItem/FileDescription" type="mir"/>
+          <Content type="string">Core Shell Runtime Service</Content>
+        </IndicatorItem>
+        <IndicatorItem id="18291612-9ca9-4f6c-8db5-44ca6865daeb" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/VersionInfoList/VersionInfoItem/OriginalFilename" type="mir"/>
+          <Content type="string">coreshell.dll</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>

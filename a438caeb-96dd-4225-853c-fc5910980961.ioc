@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          a438caeb-96dd-4225-853c-fc5910980961.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="a438caeb-96dd-4225-853c-fc5910980961" last-modified="2014-10-19T15:41:48Z">
+  <short_description>OLDBAIT (REPORT)</short_description>
+  <description>OLDBAIT is a credential harvester. Both the internal strings and logic are obfuscated and are unpacked at startup. It harvests credentials from Internet Explorer, Mozilla Firefox, Eudora, The Bat! (an email client made by a Moldovan company), and Becky! (an email client made by a Japanese company).  It can use both email or HTTP to send out the collected credentials.
+</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-10-17T02:02:52Z</authored_date>
+  <links>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT28</link>
+    <link rel="category">Credential Stealer</link>
+    <link rel="family">OLDBAIT</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="e9916fc0-7825-4fa1-9f6d-c540a5cf6d5e" operator="OR">
+      <IndicatorItem id="8041a130-1ead-43b7-9e3d-a8e19057292d" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Application Data\Microsoft\MediaPlayer\</Content>
+      </IndicatorItem>
+      <IndicatorItem id="23755a4c-fdfa-420e-964d-565ce679332f" condition="is">
+        <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+        <Content type="string">updatewindws.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ef486ea3-4023-4fcc-960a-58eb87d77a03" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">updatewindws.exe</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>

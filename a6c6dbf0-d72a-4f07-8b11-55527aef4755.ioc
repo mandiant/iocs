@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          a6c6dbf0-d72a-4f07-8b11-55527aef4755.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="a6c6dbf0-d72a-4f07-8b11-55527aef4755" last-modified="2014-10-19T15:42:21Z">
+  <short_description>EVILTOSS (REPORT)</short_description>
+  <description>This backdoor has been delivered through the SOURFACE downloader to gain system access for reconnaissance, monitoring, credential theft, and shellcode execution.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-10-17T02:00:57Z</authored_date>
+  <links>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT28</link>
+    <link rel="category">Backdoor</link>
+    <link rel="family">EVILTOSS</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="c6e2567b-8466-44ed-9fd2-2e92f532fa0c" operator="OR">
+      <IndicatorItem id="0195bdbb-61bd-4fdd-bc80-cc130234b0a9" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">netui.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d96396b2-672a-4518-87a2-53c66d20676a" condition="contains">
+        <Context document="ProcessItem" search="ProcessItem/SectionList/MemorySection/Name" type="mir"/>
+        <Content type="string">\netui.dll</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>
