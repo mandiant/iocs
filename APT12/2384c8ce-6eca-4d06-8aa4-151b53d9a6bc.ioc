@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!--
+    TITLE:          2384c8ce-6eca-4d06-8aa4-151b53d9a6bc.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.  
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="2384c8ce-6eca-4d06-8aa4-151b53d9a6bc" last-modified="2014-09-03T19:35:19" xmlns="http://schemas.mandiant.com/2010/ioc">
+  <short_description>DARWIN (BLOGPOST)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "Darwin's Favorite APT Group" that can be read here: http://www.fireeye.com/blog/technical/targeted-attack/2014/09/darwins-favorite-apt-group-2.html . This IOC contains indicators for the RIPTIDE and THREEBYTE malware families that are attributed to APT12, and the WATERSPOUT family suspected to be used by APT12.</description>
+  <keywords />
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-08-28T15:57:54Z</authored_date>
+  <links>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT12</link>
+    <link rel="category">Backdoor</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator operator="OR" id="9eb79ae9-bfb5-491d-9d46-e27b2dd40206">
+      <IndicatorItem id="9a7be55a-b92b-4345-8001-d3bf9b6129ad" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">f6fafb7c30b1114befc93f39d0698560</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9963da9c-3acc-4849-bdb3-826b89e3c78e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">6e59861931fa2796ee107dc27bfdd480</Content>
+      </IndicatorItem>
+      <IndicatorItem id="05f98fc0-935c-44f7-8616-ae85f674acc5" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">73f493f6a2b0da23a79b50765c164e88</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c0f143f7-73d5-4d89-b9aa-2bb400c72049" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">eaa6e03d9dae356481215e3a9d2914dc</Content>
+      </IndicatorItem>
+      <IndicatorItem id="92a2b5f9-8926-45ac-9daf-83af427eb491" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">06da4eb2ab6412c0dc7f295920eb61c4</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b56d0160-e672-47b0-9960-5215a356509d" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">53baedf3765e27fb465057c48387c9b6</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a428897e-2aa0-431f-b0b0-1457d95b4fcd" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">e009b95ff7b69cbbebc538b2c5728b11</Content>
+      </IndicatorItem>
+      <IndicatorItem id="abe586f3-2f97-4c5e-b466-603cff7d455a" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">16e627dbe730488b1c3d448bfc9096e2</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6cd93552-4f8c-4a46-9209-46cda8e602be" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">499bec15ac83f2c8998f03917b63652e</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2d182361-05cf-433b-8ea4-a0d2375d9758" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">f9cfda6062a8ac9e332186a7ec0e706a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bfb735dc-950a-40c1-be1a-5b7efdb5bd42" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir" />
+        <Content type="md5">4ab6bf7e6796bb930be2dd0141128d06</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5566922c-d95e-484a-aa07-b795f93a6018" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir" />
+        <Content type="string">icc.ignorelist.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e78a9567-df4b-4b10-a267-70afcaa8884b" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir" />
+        <Content type="string">video.csmcpr.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d743bd50-202e-44bd-a619-92335af304ea" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir" />
+        <Content type="IP">141.108.2.157</Content>
+      </IndicatorItem>
+      <IndicatorItem id="efd3073a-9394-4773-8308-bb0f79c9dd2c" condition="is">
+        <Context document="Email" search="Email/From" type="email" />
+        <Content type="string">lilywang823@gmail.com</Content>
+      </IndicatorItem>
+      <Indicator operator="AND" id="df05a634-4a73-42a3-ade0-f243d8f0eb61">
+        <IndicatorItem id="770c3229-6e1c-4a7b-9aa3-305416eb57b2" condition="is">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir" />
+          <Content type="int">75264</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8cc48de7-d0b5-4987-b6ca-581cd7d0e27a" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/PETimeStamp" type="mir" />
+          <Content type="date">2014-08-23T08:22:49Z</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="AND" id="02a8ce73-b111-482c-86c8-e74c95c8a132">
+        <IndicatorItem id="2c1c0b00-65dd-43a1-9db4-4134a7b6d428" condition="is">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir" />
+          <Content type="int">75776</Content>
+        </IndicatorItem>
+        <IndicatorItem id="55b88567-ca6d-4710-a39f-a874e9c06819" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/PETimeStamp" type="mir" />
+          <Content type="date">2014-08-25T01:22:20Z</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="AND" id="bc0bb68c-a536-407b-a6f4-42e1db2b86a4">
+        <IndicatorItem id="4724dce4-3737-4c3e-a809-68619232c48c" condition="is">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir" />
+          <Content type="int">49152</Content>
+        </IndicatorItem>
+        <IndicatorItem id="75365036-0cd8-41ab-81d3-97d8a8428ad7" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/PETimeStamp" type="mir" />
+          <Content type="date">2014-08-25T02:10:11Z</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="AND" id="0174531c-2bd6-4460-851c-60eea0496d7b">
+        <Indicator operator="OR" id="edbc358c-f036-45b9-bfbc-58c5647a4bbc">
+          <IndicatorItem id="3eb886f5-0cb0-4898-ac3e-b7a11da4c04b" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">word.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="518101d5-8f0f-4e26-98a5-e48de11a4408" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">winword.exe</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator operator="OR" id="3a26afdc-160c-4fc2-b20b-338207dc7d43">
+          <IndicatorItem id="0df8a1af-66d2-42fe-9db0-ee44bf9d7ee7" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">LOCAL SETTINGS\Temp</Content>
+          </IndicatorItem>
+          <IndicatorItem id="19706200-2236-4aae-86cc-dc68c8687b6b" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Local\Temp</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
