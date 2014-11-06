@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          6037663c-680c-4a28-ad58-40622d206e1d.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="6037663c-680c-4a28-ad58-40622d206e1d" last-modified="2014-11-06T13:17:34Z">
+  <short_description>OPERATION POISONED HANDOVER (BLOGPOST)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "Operation Poisoned Handover: Unveiling Ties Between APT Activity in Hong Kong's Pro-Democracy Movement" that can be read here: http://www.fireeye.com/blog/technical/2014/11/operation-poisoned-handover-unveiling-ties-between-apt-activity-in-hong-kongs-pro-democracy-movement.html#commentsl . This IOC contains indicators for variants of the KERNELBOT and PISCESE malware families.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-11-02T20:25:48Z</authored_date>
+  <links>
+    <link rel="grade">Beta</link>
+    <link rel="category">Backdoor</link>
+    <link rel="link">Operation Poisoned Handover: Unveiling Ties Between APT Activity in Hong Kong’s Pro-Democracy Movement</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="4333fb7e-54dc-49f0-9467-602ee4c58c6b" operator="OR">
+      <IndicatorItem id="f5232267-45ef-4081-af42-1cc5135e4af9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">17bc9d2a640da75db6cbb66e5898feb1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f1dd6704-2136-4d02-b186-841e111c83f3" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">0b54ae49fd5a841970b98a078968cb6b</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1a53cbbd-cf84-4784-abdb-840311094c36" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ecf21054ab515946a812d1aa5c408ca5</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5edaa4b8-7bb6-4f5a-a4d6-3a2badb733e8" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e2a4b96cce9de4fb126cfd5f5c73c3ed</Content>
+      </IndicatorItem>
+      <IndicatorItem id="df4dcab3-bd73-42e3-bff6-b8447e04a21a" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">cfa3e3471430a0096a4e7ea2e3da6195</Content>
+      </IndicatorItem>
+      <IndicatorItem id="23c27fff-d59e-4a0f-b357-918f19b87bd8" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">cea42fca9a66a5e10af4f3d244ca2c01</Content>
+      </IndicatorItem>
+      <IndicatorItem id="eeb58246-af00-4007-a81f-1440da5be5ae" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5d4bc88b1e8c549e50422ce1980dd658</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3ba8ff10-8b5c-4525-869f-e2ae78951c55" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">3d1292b1c650539fcd451ed2eeab95a0</Content>
+      </IndicatorItem>
+      <IndicatorItem id="80648baf-91d5-4140-b4ef-fcba40123045" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">32801f933db886e3714708c1abbbb155</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ded68e63-bca9-4df8-a258-05b6a1b94173" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">9f39a5753a9ccf34ee43269112fe8be0</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6626effd-91e7-4871-8fde-db97cf156dee" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">39bb90140fc0101f49377b6c60076f9d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3ddb5dd3-a3e5-410d-b304-adfa094b5626" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a98382645f8cecef96b99661a65f646f</Content>
+      </IndicatorItem>
+      <IndicatorItem id="72f7ff54-157e-4572-97e0-3f92a91ae530" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d08e038d318b94764d199d7a85047637</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a044b6bb-e10b-4b22-939e-cb2e7392f71b" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">c3d6450075d618b1edba17ee723eb3ca</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f41c7ae6-d898-4ce3-b4b7-2e71a1272b93" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">431b5adff20eb4ad1f1c689201364103</Content>
+      </IndicatorItem>
+      <IndicatorItem id="78d515ca-f4ce-4288-99f7-1ada593f5198" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">caa5529010c17b969da01ade084794c6</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3ef929f3-0642-4baf-9a9b-1943a97834ac" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">59762ad384c7d3c50c874495b0687984</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fae9c0eb-a4a5-411f-ae1c-28e19d63ce6a" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">dcc81f653bbec27405c9a7b642a557ac</Content>
+      </IndicatorItem>
+      <IndicatorItem id="be663e93-eecc-48b8-9c04-6b9453dd0c65" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">84bd0809b1dbc2dc86f30d30faaa7e4e</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c4ab8f0c-a3cb-453b-888e-0e053c969d33" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">7436062842323f26d0f8120d9972b0fd</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ab65270c-95de-4663-b9fd-341af500022b" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a02a0e8dea14282a51384ef7f48f515c</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e20d413a-cc22-4984-be41-31f55a8c08c2" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">76af046753a23522629e09336d6eeead</Content>
+      </IndicatorItem>
+      <IndicatorItem id="92df394d-31d4-4bfb-8130-cd7ab8162c98" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">6fa782bb0a54a49e8c9699315e24b0d7</Content>
+      </IndicatorItem>
+      <IndicatorItem id="68231a6c-abc9-49c1-83c9-be0af10ec881" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">\All Users\Application Data\libssp-0.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a40f7249-267a-42ee-bfb9-112520898262" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">\All Users\Application Data\ctfmon.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9cf6f026-9142-43b7-81ca-97fdc5473577" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">\All Users\Application Data\readme.txt</Content>
+      </IndicatorItem>
+      <IndicatorItem id="feea9860-4ccd-4117-9907-c9e2292891eb" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">\ProgramData\readme.txt</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d48ce91f-03a3-49bd-b3c0-dbe1cfc5c4ce" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">\ProgramData\ctfmon.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6b213317-51de-4fdc-870b-768c68a4a8a6" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">\ProgramData\libssp-0.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="96863e1e-0991-4305-ac1f-5829d1860e8c" condition="contains">
+        <Context document="FileItem" search="FileItem/PEInfo/DigitalSignature/CertificateSubject" type="mir"/>
+        <Content type="string">QTI International Inc</Content>
+      </IndicatorItem>
+      <IndicatorItem id="62af8a86-c256-41a9-aa9f-a850b1cea188" condition="contains">
+        <Context document="FileItem" search="FileItem/PEInfo/DigitalSignature/CertificateSubject" type="mir"/>
+        <Content type="string">CallTogether</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dec92a20-d82b-4a44-a2f4-64eda88708bb" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">hk.java-se.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6196daaf-cf56-43f5-8662-c963520dd179" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">u.java-se.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="49088233-74f8-4d51-ad1c-ada377ab034c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">p.java-sec.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1f3470a4-d75c-461f-9450-de92aeea8150" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">jre76.java-se.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="cedc719f-bcaa-48ce-af82-6cf11648efb8" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">u.java-se.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="eca5158f-e642-4767-9f83-db3f44505d13" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">hk.java-se.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f2184609-b290-4e31-9dfb-8756416fdd49" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">java-se.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a19a5ea0-9b90-47b5-b0a5-e9473e93a1e1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">www.sapporo-digital-photoclub.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="78f2438f-609c-4a51-87ab-2a171d36911d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">www.credo-biz.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f58ceac6-ab3f-47eb-afb5-941b79350e62" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">wizapply.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="325cd8d1-2aac-4333-beb1-5d8db07999ec" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">ninekobe.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e5d6ba93-3c4d-4d5a-a8a8-b57c54751b24" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">sp.you-maga.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e158a2b2-1e96-4462-bb42-16aaa4f91caa" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">mizma.co.jp</Content>
+      </IndicatorItem>
+      <IndicatorItem id="72e06de6-3510-41f1-b053-40a6ace37265" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">tommo.jp</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6ba77c46-65ba-4db9-8068-2494a55f20ff" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">shinzenho.jp</Content>
+      </IndicatorItem>
+      <IndicatorItem id="36ec234b-1ed6-4d21-8f29-b6b6e0c055ea" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">nitori-tour.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="71e7cb4f-ebdc-4388-a85f-d4c78f2bb27e" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">luxscena.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1ffc159b-1f6d-441f-bcd4-972d0c88c922" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">wakayamasatei.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6eb8be8e-0b4e-4df3-9ce0-06c5f1547d33" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">124.248.237.26</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1bc49036-6ea3-4579-bcee-2b697a9e5ecf" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">223.29.248.9</Content>
+      </IndicatorItem>
+      <IndicatorItem id="641fb1bf-3b0f-4f0b-8591-43687eea8651" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">112.175.143.2</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4be66be4-9ecd-452a-9dd7-25b081203d75" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">112.175.143.9</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5e6b9184-3c7d-4f5d-83c7-59181fc135a7" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">211.233.89.182</Content>
+      </IndicatorItem>
+      <Indicator id="cb635652-c84d-475c-807d-a41065555c11" operator="AND">
+        <IndicatorItem id="fd691527-cd1a-4561-a9cf-55484e00b0f8" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+          <Content type="md5">c129ea6cbc201406a9a8a296caae0d21</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5c68736a-b9dc-41ca-a5ae-450cd821343d" condition="is">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">dllhost.exe</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="c7200e8a-ba35-41a2-a7a7-3a21d15790a7" operator="AND">
+        <IndicatorItem id="2a86dff0-f827-48e4-876c-30c3846e7146" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir"/>
+          <Content type="string">CurrentVersion\Run</Content>
+        </IndicatorItem>
+        <Indicator id="77484e86-f13e-4515-8f74-9c33d27168f5" operator="OR">
+          <IndicatorItem id="bc6a9c26-21b2-4c68-b520-3a0d0a742daf" condition="is">
+            <Context document="RegistryItem" search="RegistryItem/Text" type="mir"/>
+            <Content type="string">C:\ProgramData\ctfmon.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="57cdb488-e318-4e24-b780-b7500e7a0eb2" condition="contains">
+            <Context document="RegistryItem" search="RegistryItem/Text" type="mir"/>
+            <Content type="string">\All Users\Application Data\ctfmon.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="28fb834c-5fc1-4f4c-9d46-371e7f11fee3" condition="is">
+            <Context document="RegistryItem" search="RegistryItem/ValueName" type="mir"/>
+            <Content type="string">dllhost services</Content>
+          </IndicatorItem>
+          <Indicator id="b1dcf4e9-4f43-4acc-8745-9f3facac3dd1" operator="AND">
+            <IndicatorItem id="58269f0a-1e65-4e4c-a203-ca3a0cb2c8cd" condition="is">
+              <Context document="RegistryItem" search="RegistryItem/ValueName" type="mir"/>
+              <Content type="string">pidgin</Content>
+            </IndicatorItem>
+            <IndicatorItem id="ebe3d996-5bd3-4cc0-817d-21ca5eb27f4d" condition="contains">
+              <Context document="RegistryItem" search="RegistryItem/Text" type="mir"/>
+              <Content type="string">ctfmon.exe</Content>
+            </IndicatorItem>
+          </Indicator>
+        </Indicator>
+      </Indicator>
+      <Indicator id="50358d9a-7785-4047-856e-9dadcbf8a76b" operator="AND">
+        <IndicatorItem id="f52c03ff-bb45-46d8-bab1-4ea5319bffbe" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+          <Content type="md5">1685f978149d7ba8e039af9a4d5803c7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="009f2e0e-201f-4555-a360-a661933e14d0" condition="is">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">ctfmon.exe</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="05becec9-e2ed-4fdf-8fdb-dc4fc689a247" operator="AND">
+        <IndicatorItem id="c1c47085-5d5e-4e15-bde8-6249b710e77f" condition="is">
+          <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+          <Content type="string">ctfmon.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c68f94de-4dea-4acc-8820-67373d3df2e9" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/SectionList/MemorySection/Name" type="mir"/>
+          <Content type="string">\libssp-0.dll</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
