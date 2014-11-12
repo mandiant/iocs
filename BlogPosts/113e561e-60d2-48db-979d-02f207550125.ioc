@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          113e561e-60d2-48db-979d-02f207550125.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="113e561e-60d2-48db-979d-02f207550125" last-modified="2014-11-12T12:46:07Z">
+  <short_description>RAZOR BLADES IN THE CANDY JAR (BLOG)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "Razor Blades in the Candy Jar" that can be read here: http://www.fireeye.com/blog/technical/2014/11/razor-blades-in-the-candy-jar.html. This IOC contains indicators for domains and IP addresses used to host the Sweet Orange Exploit Kit.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-11-07T13:45:38Z</authored_date>
+  <links>
+    <link rel="category">Exploit</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="958fa712-7e84-4a0d-a4e3-2918b9aeda9a" operator="OR">
+      <IndicatorItem id="1d233eb6-52d7-4843-a013-6de4d6877515" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">img.lakeforestparkhome.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dbd5b695-fb67-4987-9ee1-4c680eaefc6c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">micagirl.net</Content>
+      </IndicatorItem>
+      <IndicatorItem id="258695cd-c21a-48b1-9f57-7768dfb699c2" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">h.micagirl.net</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ce4bfd0f-bc4e-4250-b784-110af8a77436" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">a.micagirl.net</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b105fbd3-c53e-416f-ac80-9c16448598f3" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">img.kirklandhouse.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="27f23053-6941-4e6f-ad6d-cc6442f6798d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">cdn.jameswoodwardmusic.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c0082ee6-fc2f-4b5a-8bf5-a3aac8f8da76" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">cdn.movetoclarksville.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ed986932-8ba0-4195-bad0-2313cb3b887a" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">img.greenwoodhouse.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="362c6b4f-f3aa-4f77-864b-083c143d976d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">src.sandcastlesmagazine.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4bb8378d-7df5-4b8a-b136-48588c1c37b9" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">src.sheffieldwoods.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="aea5076e-8c2d-49b8-b968-31cbd79601f1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">yimg.1stdayofwinter.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="68c52dfc-9d6a-4ffb-8d55-40c3f78493dc" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">yimg.1208nw199thpl.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="38e7cd32-0f5e-4224-a932-0c4dfde4881e" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">img.broadviewhome.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d56689cd-975d-4cb7-bbcc-60682c5ea162" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/Host" type="mir"/>
+        <Content type="string">cdn2.movetoclarksville.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3dd71368-5044-43ac-a8d5-d69ed026ad85" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">185.22.233.136</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bed525e5-8fb7-4ed5-9b88-5fe84e38b26a" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">192.185.16.158</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>
