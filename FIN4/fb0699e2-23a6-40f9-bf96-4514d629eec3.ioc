@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          fb0699e2-23a6-40f9-bf96-4514d629eec3.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2014 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="fb0699e2-23a6-40f9-bf96-4514d629eec3" last-modified="2014-12-01T13:04:46Z">
+  <short_description>HACKING THE STREET (REPORT)</short_description>
+  <description>This IOC contains indicators detailed in the white paper "Hacking The Street: FIN4 Likely Playing the Market" that can be read here: https://www.fireeye.com/blog/threat-research/2014/11/fin4_stealing_insid.htmll . This IOC contains DNS entires that are controlled by the FIN4 group.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-11-28T18:38:17Z</authored_date>
+  <links>
+    <link rel="threatcategory">Finance</link>
+    <link rel="threatgroup">FIN4</link>
+    <link rel="category">Credential Stealer</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="047afa3e-e080-47c7-8971-a864757934a7" operator="OR">
+      <IndicatorItem id="982ef256-5675-4f2b-9010-d9716e89546d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">ellismikepage.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b299d74c-1a6e-4291-8ed8-f0d417d573c2" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">lifehealthsanfrancisco2015.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1cc54e41-cd1f-4014-b45c-b4f115a4d2ce" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">rpgallerynow.info</Content>
+      </IndicatorItem>
+      <IndicatorItem id="146070bd-479c-477f-aa2c-2311199c31fd" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">dmforever.biz</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c1b8f952-004e-4c6e-9a2a-99f975c233ba" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">msoutexchange.us</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a7f4dc08-d3f3-4847-9a3e-41c7a6fcad3b" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">junomaat81.us</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b63cc380-b286-45b9-8009-a85d2be07236" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">outlookscansafe.net</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c01d0065-1d7c-41bf-bbf8-b5bc7c0a7d89" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">outlookexchange.net</Content>
+      </IndicatorItem>
+      <IndicatorItem id="78b9679f-2c21-47eb-ad66-851483b7837c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">nickgoodsite.co.uk</Content>
+      </IndicatorItem>
+      <Indicator id="bde310f8-53cd-4eb5-bf93-d15638f549fd" operator="AND">
+        <IndicatorItem id="bf174984-9471-40d3-9eb2-d965855f24da" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">msg=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="272d1824-5599-4f75-9871-feb633ea5ee6" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">uname=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c298f319-8f0c-4fd0-8666-b4f2a0f7100e" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">pword=</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
