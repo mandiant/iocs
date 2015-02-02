@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          5a8d6878-2649-4ddc-a1f6-c98932a54f91.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="5a8d6878-2649-4ddc-a1f6-c98932a54f91" last-modified="2015-01-27T22:19:57Z">
+  <short_description>YABROD (DOWNLOADER)</short_description>
+  <description>YABROD is the first stage of a two stage downloader.  The downloader downloads the second stage, CABLECAR, which uses a PDF embedded in the YABROD binary to extract shellcode and inject it into processes.  This injected shellcode downloads and executes a file, while setting a persistence mechanism for the downloaded file.  This downloaded file will then extract shellcode for the Metasploit Meterpreter and execute that shellcode.  You can read more about these downloaders at https://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.htmlhttps://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.html</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-01-27T22:07:02Z</authored_date>
+  <links>
+    <link rel="family">YABROD</link>
+    <link rel="family">CABLECAR</link>
+    <link rel="category">Downloader</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="d6932355-3f31-4c9a-b822-126ae5c07502" operator="OR">
+      <IndicatorItem id="e6a78908-cbb1-4b1d-8066-33dee72d0cee" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Temp\Keyboard-Sounds.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7f1fcdcd-3a9e-4dbf-8363-c727ae2bbba9" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Temp\vpn7x32.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d6d7a314-411e-4930-9542-564ea40ccb79" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Temp\GoogleUpdate.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7d2af5e2-8293-408a-a819-c7ae5d61f6d5" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Temp\Yabrod.pdf</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2131173a-d5e3-4715-8647-77630f3390f7" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Keyboard-Sounds.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2955c667-201d-4327-a3c6-2f06230fc9e1" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">VPN7.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f5b3aa2a-e21e-4bb7-bd2a-3b8e4c3aba2f" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">0e24a0060493bcb85ce4a5110550f204</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a3814c20-6854-4481-b713-9013201767da" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">1328d3d4872bfe2c98fd7b672d8dff1b</Content>
+      </IndicatorItem>
+      <IndicatorItem id="76cf7f3a-5935-4892-a4b7-4d445c848087" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">508deeb6a5a37e9f94d5d4733ce0352f</Content>
+      </IndicatorItem>
+      <IndicatorItem id="abded3e6-a46c-499d-8233-273b8861d003" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ba02f98166f1fd960d1371b74f4bb367</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bd9c63c1-68fa-4561-adbf-6035b26155e1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">bc167bca4ca3cf6f2f2bd7e90ecdeb29</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c03667da-7de1-4905-85fe-1acf9a53e904" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">bd4769f37de88321a9b64e5f85baf1ef</Content>
+      </IndicatorItem>
+      <IndicatorItem id="87a8b5c6-361a-424e-9e11-2ceffc515a57" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e0625817eb11874d806909a8c190d45a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="00ad2b01-70fa-4f5f-ab33-cb3284f4a320" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">f18dedf9f5d213deba18a2e037819ea1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a5c99e54-3cfe-4ead-acd5-01986248e8b7" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">44df02ac28d80deb45f5c7c48b56a858</Content>
+      </IndicatorItem>
+      <IndicatorItem id="acf5842e-fcf2-469b-87e3-a944901b5df1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">78c5670e2cee9b5c3b88aa9cb27519be</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9d08c7a0-cb39-4822-88a7-7bfbea72c299" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">9d351b9ee731d88f12fcaa64010e828d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="31f8316a-2561-4c98-a312-cd3e346a6a1e" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">greenhill.png</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c3e935d9-f0e1-4188-816f-6a2333547263" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">reporthezbolla20072013_pdf.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d264c1bc-a64c-48f1-a839-8cd225b2ffe5" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">bayan09072013_pdf.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="15f8b852-b32e-4aa3-91ac-43f3062e9ec0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">182c7b1ad894852d23f4de538e59ac2b</Content>
+      </IndicatorItem>
+      <IndicatorItem id="88eb6792-d142-4850-b37f-945f1a90844e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">4e007cb87626f0093a84ed50b1d27a7f</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>

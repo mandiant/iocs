@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          6bb9ce5b-94c1-4733-8bb8-dc5be775b190.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="6bb9ce5b-94c1-4733-8bb8-dc5be775b190" last-modified="2015-01-29T20:20:44Z">
+  <short_description>BLACKSTAR (FAMILY)</short_description>
+  <description>BLACKSTAR is a dropper which extracts and executes a second dropper in memory, called REDDWARF.  REDDWARF then extractes an obfuscated copy of the DarkComet backdoor and executes it in memory; before writing itself (REDDWARF) to disk and setting a persistence mechanism.  DarkComet contains standard backdoor functionality such as manipulating processes, services, the registry, and uploading and downloading files, as well as control of webcams and microphones.  You can read more about these droppers at https://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.htmlhttps://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.html</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-01-21T20:20:24</authored_date>
+  <links>
+    <link rel="family">BLACKSTAR</link>
+    <link rel="category">Dropper</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="1b923afe-4551-4f6e-8df7-e89e4ffd560f" operator="OR">
+      <IndicatorItem id="8165f3e6-a355-460d-b1a7-b6ca634c635f" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">de65eed45ac210c66db8082f1a72db8f</Content>
+      </IndicatorItem>
+      <IndicatorItem id="27b3cea2-e78b-44de-aa10-b0c6df2cf341" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">7576127f8bd805b30d0016d897211f54</Content>
+      </IndicatorItem>
+      <IndicatorItem id="75963603-3024-42a6-8ce9-8e5685ee6abf" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e11aeb603cb7a31c2028976a2deed550</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9bb66cdc-4ac8-4a2b-8d79-d40950f55ac0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">7247d42b3b4632dc7ed9d8559596fff8</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c1b215b7-3341-4a67-98b2-96ebd8291e71" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a691e4b629da2b37dd87e760bfb0106e</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c8b50693-8f0a-4ca8-8451-9f01b06c9899" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d1f817744f79dad415a526c4ce51bed9</Content>
+      </IndicatorItem>
+      <IndicatorItem id="243fff5d-b9e4-49bb-bb2b-a58fbf7fe5e2" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">202eb180f5faa8460941ae60cf63da63</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9bcf50c7-7f20-4b89-85f6-dba1e2023772" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">64eb08013399e3ac18c936d361d80e17</Content>
+      </IndicatorItem>
+      <IndicatorItem id="02ccd273-b285-44e2-8872-327427604ea0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">163595b20debdeccdeaf4cb14fba737c</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bf3af89a-3bcc-4dca-9200-981f18e68f2e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">97a35a7471e0951ee4ed8581d2941601</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1150b11e-a69b-4f51-bd89-2b66e78108a5" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">c421f4e12892d4ac345e7b03f6a053d2</Content>
+      </IndicatorItem>
+      <IndicatorItem id="22711234-8875-43dd-a64d-4bf8aac922ac" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">39632325327bf21f7d9cf02caf065646</Content>
+      </IndicatorItem>
+      <IndicatorItem id="06cfab9d-88bc-458d-966f-28992c85960e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">60aa1cdb1df16179b88be8cf8dbbaf14</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a88bab44-ce40-49d4-8608-bba61b85ef99" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">89dda79018d6216970a274b16b3494ad</Content>
+      </IndicatorItem>
+      <IndicatorItem id="72e0f40d-0fdc-4ea1-b507-719e931dc15c" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a641c08e09c53858d16c0c70107979b5</Content>
+      </IndicatorItem>
+      <IndicatorItem id="60d189fa-bbcf-414a-925d-53a2933f3ad0" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereadersetup-86x.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="79da1c47-5afa-46e0-93ea-1de47b5b0bd7" condition="contains">
+        <Context document="FileItem" search="FileItem/PEInfo/ResourceInfoList/ResourceInfoItem/Name" type="mir"/>
+        <Content type="string">DIOKAK</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d90f69bc-ec36-4ca7-80a5-802257098eae" condition="contains">
+        <Context document="FileItem" search="FileItem/PEInfo/ResourceInfoList/ResourceInfoItem/Name" type="mir"/>
+        <Content type="string">UXLNYL</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f92182f4-668e-4e13-82c9-45a16d82159c" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetup.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="70f4d41b-0acf-4d55-81b6-ba832b1be0b5" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobe32en.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="225ba8df-eafe-4b91-b7c2-6f24a40ae43f" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereadersetup-86x.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="15ee1b29-6d77-4dd3-91b5-a4917a4d246c" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobex86setup.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dde04d4f-ad3b-477d-aa63-f7535f38d5ae" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">google-update.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9d66a38a-5b6a-427e-8790-01ce803bef27" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereader-86x.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b2e58810-e734-4860-a83e-7f3935e44243" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetupx86.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e8de7565-7014-4852-920d-3b4ac0784f4d" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobred-86x.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7cc04535-b2ff-4ed5-b785-7ec3c8254133" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereader-86x-64x.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9f7b0e76-24f3-4718-a15e-63b2a2731edb" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobeflash.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1bf62473-8c29-46b5-9388-dfea1503bbe2" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetup32.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7d71ba36-49f5-4160-85a9-afb8ed67eb09" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobeinsx86.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b2a39f22-bf3c-4c23-9136-fa1c4af6d6d8" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetupx86.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="750f0e36-a94a-4077-abee-d103cca742ea" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">microtec.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="921927e6-915f-4c7d-b0d8-f451a1bca3bb" condition="contains">
+        <Context document="ProcessItem" search="ProcessItem/HandleList/Handle/Name" type="mir"/>
+        <Content type="string">DC_MUTEX</Content>
+      </IndicatorItem>
+      <Indicator id="21da533c-635b-4e0b-9606-408ef0098696" operator="AND">
+        <IndicatorItem id="81a2f561-aff9-49dc-9928-312832cd584c" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir"/>
+          <Content type="string">CurrentVersion\Run</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bcca7791-fdd4-4947-92d3-08fff6d2cce1" condition="is">
+          <Context document="RegistryItem" search="RegistryItem/ValueName" type="mir"/>
+          <Content type="string">1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2dda338b-4556-42c6-90f4-e5a9dd9ffc37" condition="containsnot">
+          <Context document="RegistryItem" search="RegistryItem/KeyPath" type="mir"/>
+          <Content type="string">RunOnce</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>

@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          de99badf-b448-49e7-885a-4d8688ddf02d.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="de99badf-b448-49e7-885a-4d8688ddf02d" last-modified="2015-01-29T21:00:47Z">
+  <short_description>SFX DROPPERS (DROPPER)</short_description>
+  <description>SFXRAR Droppers used to deploy BLACKSTAR and ONSIZE malware families.  The droppers contain a decoy document, and second  password protected SFXRAR containing the malware.  You can read more about these droppers at https://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.htmlhttps://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.html</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-01-29T20:34:02</authored_date>
+  <links>
+    <link rel="category">Dropper</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="1d1ca4d6-6136-4c47-8168-741fc43a11eb" operator="OR">
+      <IndicatorItem id="62428356-b947-40eb-93fd-db88c3eecad0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">0187be3ccf42c143ab96e7bbf2efbf2f</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e05f059e-2af0-40c4-b356-974da8039372" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">0cc7b05c220ecbeb52891d49f1ab41ab</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7fb28ec0-08c4-470c-9cd0-e38d4f18be1f" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">29e79080b2b2de01b53223542b46d570</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c4bd3b4b-53f3-479f-b6ca-3fe7ba2dbef1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">2a456e35918700bc76f6ec1dd9ea93a1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d7c55457-1445-4bf4-9fe7-22d6ae0fbd1e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">36875b44145cf20b8d3148e7f7efcea0</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c8ae8a55-7823-4c7e-868b-50168c1f3f07" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">3ffc4e4081854d04d8217c2ebabdd61d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="403842e5-76cc-47f3-b899-f70cd897cd35" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">4268e2a8209429155ef5df22ca17c0be</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c03b34e3-29da-4c85-b561-55b87ffc667c" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">465a0bf22cd101dbd502a2576f10ceb4</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4380b595-7b16-4536-947f-a2b6779742ba" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">4cd035012ec6015e48f6fb7001330a95</Content>
+      </IndicatorItem>
+      <IndicatorItem id="980b19cd-8cdb-425c-a205-fe07ecf38f99" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">4d70791db506cb04e62b607e1f57699c</Content>
+      </IndicatorItem>
+      <IndicatorItem id="71369f83-ea84-47a8-94e4-4c9d578e5d57" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5e334057856967a5d31c266c550549b0</Content>
+      </IndicatorItem>
+      <IndicatorItem id="457d3bfa-236a-4547-a312-62f774d562f0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">6439ccba5b06e434953ba209b8b07107</Content>
+      </IndicatorItem>
+      <IndicatorItem id="aa2cefe9-c51d-414a-b997-200fa8996ca0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">6608ce246612d490f3b044627a5e6d9e</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ef9ccec4-fe22-439c-9279-54dd5c6e9a68" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">692265ba1d4a5b2773e596d3491ed2be</Content>
+      </IndicatorItem>
+      <IndicatorItem id="71edbd6a-eb70-4782-a446-c3e3f6d147c4" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">7091f135e4718586d16b56c04b21a6b7</Content>
+      </IndicatorItem>
+      <IndicatorItem id="10e07b83-6b3d-4d29-afc3-55f48fafe015" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">8a0a36d0d1d91b357e5ce8f84ad16346</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bddf830a-2f59-4cd3-b1f0-df812da49152" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">931bafa20756eaf8b5371222b5b81a61</Content>
+      </IndicatorItem>
+      <IndicatorItem id="90483ce4-579c-4d57-bf38-7a71418e8125" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">980c6e7f8a10144a28730f3f0adb99d0</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4647029a-0a42-4726-b5cb-d1669d6d67f1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">99655bacbe845ad30c6c5ed56a7e13d4</Content>
+      </IndicatorItem>
+      <IndicatorItem id="0d57a1c0-c011-4c07-b5eb-9118a05239da" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a19e70ffa130a096753463b23733927d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5fcbbd0f-1747-43df-a6f3-67b1e5589b15" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a577701d4b5ada66912a242a7772b48a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c0b32932-f72c-4603-ac47-d94a2c18a76b" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a9e5ec23ccdec9cd79af771e2dbf54d5</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fd7bb043-3501-4593-9d97-e3c468b95df4" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">c79ad54dead0b446fe8fac60cbd133a7</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b2332c14-4519-4c0e-b1c6-6c1f88a1d586" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">c808ef1ab997d0234ee889ecd5176c8e</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4fa2f2df-0f40-4208-98c3-17cc49876c02" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d023fc719fba710b44f140deff3f83e4</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b0cc4583-bce3-489e-ab85-2b42dbfb6408" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d32aaf60744678e559db59fbe2daa938</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a36a2eac-0eb5-4199-8484-c3ad0f128c19" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d87356940d3b15d87453ead6374691ab</Content>
+      </IndicatorItem>
+      <IndicatorItem id="006af8d2-7247-4b66-8ea8-c5b5e29c1362" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">dc33cbf669df01302ddd124b028a4fd9</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f374bb89-3df7-4e4e-8d50-2ffccd5da0d6" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e403972c890cf2eb0a361a91ac5ffe5e</Content>
+      </IndicatorItem>
+      <IndicatorItem id="242fabd9-9709-4f07-95c9-21bc370649cf" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e41c913327e6974730da99e7c327a2a2</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a1e17892-1e20-43c1-a116-dd7ea33d6db7" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e65bdb88e606c45521ab2c04c650ed86</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fdb47abe-c6c8-475d-93ac-64e692b25371" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ef56383f53b7ccb08016737c98fe2982</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6db96855-c4b7-444b-a93b-8f45daedfb7f" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">27c2b873849227de45ec10fca112f322</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e5280b73-1eaf-452d-9141-e97849fa2061" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">47702a6cdc59859ec97c99aa31148ae6</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1c7065df-a47e-4b82-8584-465a071d64e1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">4bd3ea86eb7d63b1bdd001e6adbe8b89</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6e81b23e-b67d-4055-b42c-38391c0a9225" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">57cbbe8e7d18b1980cfc4bc87121b2c7</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7ff7cc63-0c3c-4f24-a739-e625e589c623" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5ae84cadc1ea5a4bcc027a19eca514c5</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ee043304-9c17-47b5-8966-830333ecd2f2" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">63fb57fd90590c3c0d0d95d86b6df66d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2e9f6f88-025f-4e3e-ada7-242ac9397642" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">748b8aca1c17415648b80f0038381097</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a60e692e-800d-47fe-9957-5b715f9c31b9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">81ef5426583e1d6df4193f38402b40c1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8e41530a-419e-4e0f-8ff3-970cf3312a7c" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">9491c4e0c08c9347421ae352f14a1329</Content>
+      </IndicatorItem>
+      <IndicatorItem id="691af236-26a2-4b2a-8951-0c253f54140c" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">a1e0d40715f66f30aad44ab4c15a474a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5e0e067a-4a16-42fd-8e7c-6056464bc0d4" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">b23b16b3cccba9c1ecd0c0d17cc48979</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8d07b5ba-79b2-49f3-84ea-8c39cd2338d5" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">b9623abd519ee688e0b9d9350c83e209</Content>
+      </IndicatorItem>
+      <IndicatorItem id="78f95ef8-bf28-4f75-b7dd-93639b72e8bd" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d4b4367f874c9c8d645b1560f9d259ea</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1ad1a9f3-5aa4-4e3c-8879-305d45397bf1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d620deacd018da09a69e24cb978f556d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="41daed0a-865d-43ca-a998-7dd5a145b02d" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">d672e9789f22b806a295f0dd2122316a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3d9cb823-0a0c-404e-ab00-e35cab67abf9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e2a624302af7a3eeb59cbb58f36b0fac</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c41c3124-569c-4bf3-8789-c64774f8cb7b" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">f7f8538d2ab0ffee878a4e512230f97d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="940fdd08-9864-4384-9a23-c15fe9f16c5e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">f893d5d351a3ffc1f89a8ec8147cd060</Content>
+      </IndicatorItem>
+      <IndicatorItem id="87f5e192-934e-453e-a173-79b9591d08e9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">fda3816d0bac2e4791cbcfaf33416633</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6d46a41d-554d-498e-ae57-a4416b82294a" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ff97bc797ed27b5e21e4e4a6e7443219</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8e467bfb-9bc8-40e5-8525-6ccf30fa3eca" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">idm-en-setup.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b20a78bc-85c9-4db4-aaa8-563ed43ef98e" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">IslamArmyThem.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="30e4b81a-6a7b-4cc1-98e3-b0181bff37f6" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Keyboard-Sounds.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="798420a7-6c6b-42f3-aa3d-cfb77ca3f258" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Pdf-to-Word-Converter.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f308a13e-15e8-4106-bdc8-15e460151960" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">from-aliwa2-doctor-salim-dris-to-whom-it-may-concern.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6d8be3b2-022e-405e-b7a6-fe63d1b8ecc9" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">diplaced-syrian-people-cod.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3bf43d97-b3d4-45f4-a97a-973594200da1" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Displaced-Syrians-Suffering_cod.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="801e9ac5-4541-469b-942f-97129ff660f3" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">install_flashplayer11x32_gdrd_aih.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="17494f8f-1ddd-4806-a910-9c361a70935a" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">JetCleanSetup.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="51d50844-5ac1-44e7-8cdc-00ee4929a36f" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Maktal-Kiyadi-Barez-men-hizbillah-fi-ltafgir-l2akhir-fi-ldahya12300012.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d154652e-b20c-475e-bea2-75038ec0ff72" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">AdobeReader-9-En-Us.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fa16f9ef-b015-486c-baba-68d1699c9fd2" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Eye-Protector-Portial-Setup.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="360c5369-a3e8-4b16-b233-104cbc7b7ecd" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Billiards.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="27a6d0c5-f423-43c7-8624-f183ad8c94c6" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">New-Iman-Picture.pif</Content>
+      </IndicatorItem>
+      <IndicatorItem id="37aabe49-a727-4e48-bb50-4eed33de0d6e" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Live-Chat-ooVoo-Setup.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="646ef17a-f9c6-4140-8e10-954fecc53955" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">nazhin.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1082400e-91dd-41a6-a893-e54cdf76086a" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Video-Downloader.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d827fc4d-ad76-44fa-8ca2-1d55450120d6" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Amer-Mohemmeh.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fabbdbac-5eb8-4e2f-bec5-c6679f3657de" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Russia-vs-Amerika.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="17c547e7-fc9a-4b5a-87f8-c267fea5aff4" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">google-update.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="0c6dbf85-0efd-4228-a462-0973f9db89fb" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereadersetup-86x.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="49d08c8a-5dd3-4f93-a58b-6c20686bbecc" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobeflash.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="cf7e19f6-bdd5-4c58-b39f-e0c29a623b4a" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">oovoo-setup.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="43922869-f087-4c3c-a4c7-8d9bdded6362" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">microtec.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="998da21d-e96c-4be0-9bb9-0b9a676e6953" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Microsoft-Update.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="848f5857-136a-4b4c-beee-94ddd2d238e4" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetup.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a4b54748-e7e0-4b7d-82cf-13b47c1ee6fe" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetupx86.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f0024c51-899f-490e-bef0-23a1b371f950" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">office-word-update.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ec42692a-e0fc-4737-b568-5b13dbe070ff" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">update-flashplayer11.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2c356d1c-d051-45cd-881f-02ebd2ac4954" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereader-86x.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="48ce6d8c-52a9-40b9-afd5-c64c04b060fc" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobesetup32.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fb101a12-3ef1-499b-89d2-e057db0f428f" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobe32en.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6f5f3985-f5e1-49ba-af1b-6904a3ac6ea2" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobereader-86x-64x.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d71566e2-337a-456a-ae51-1ae4e2939b9f" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">adobred-86x.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9fa3e656-9ea9-4943-a165-5f71cec16d51" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Syrian-Girl-Against-Regime</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7c91cf8f-60eb-408b-883b-b194607d5d92" condition="contains">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Syrian-chlidren-under-execution</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3971c4d4-997e-427c-a26c-8f695e7f70e2" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">1bffa6c711df066663df09f23620f2e1</Content>
+      </IndicatorItem>
+      <IndicatorItem id="72a58393-b0e0-4125-b747-3afcfcfe9023" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">3230c89656f38f66270dca06aa881823</Content>
+      </IndicatorItem>
+      <IndicatorItem id="537b3ea6-4197-4ab7-821d-3477d6bed7f1" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">715618e15ce6109d45396302c4914b3b</Content>
+      </IndicatorItem>
+      <IndicatorItem id="21ba5cd4-dae8-4f11-8b48-187327d7a7b2" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">7609f31d5e99eb5cca319af7cfa4795d</Content>
+      </IndicatorItem>
+      <IndicatorItem id="cf1776a1-dc9c-4261-9178-d1e02a47afb8" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">89dda79018d6216970a274b16b3494ad</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8133dbc9-d29b-4020-aaad-8e5cc99598e0" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">e11aeb603cb7a31c2028976a2deed550</Content>
+      </IndicatorItem>
+      <IndicatorItem id="268e3fda-b0db-4c83-8032-fa0b8529c974" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ec12a7ec64f2b2a082a1854995e00817</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b99ca46e-9a6a-4a62-b074-bf8206a541ec" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">f96bfc861e90c12040da602348837adf</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4fbe2911-92d6-41ec-92ac-83418fed7639" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">AdobeSetupx86.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fa551f96-6109-4fa5-913e-e50ece960e3b" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Temp\AdobeSetup32.sfx.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="915305da-be60-4628-89ab-e6c5403e4b7d" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Temp\horr2.jpg</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2785413c-dffa-44b1-8a09-e83fecbbdc2e" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">Start Menu\Programs\Google\Google Update.exe</Content>
+      </IndicatorItem>
+      <Indicator id="539f4b2f-9987-4c80-9f18-86e655575b82" operator="AND">
+        <IndicatorItem id="5588b63f-974d-4484-8e46-5ef51ba417a9" condition="is">
+          <Context document="ProcessItem" search="ProcessItem/name" type="mir"/>
+          <Content type="string">Google Update.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="83af21cb-f23f-4156-9a87-cae4b4fad825" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/path" type="mir"/>
+          <Content type="string">Start Menu\Programs\Google</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="226a7711-195a-49c6-8134-53ee12b8a220" operator="AND">
+        <IndicatorItem id="d8d810fa-7534-4ec3-890e-b604956dc78d" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Text" type="mir"/>
+          <Content type="string">Start Menu\Programs\Google\Google Update.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d03ceb7f-ab07-4a91-b06a-ee833bd4a7ee" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir"/>
+          <Content type="string">Software\Microsoft\Windows NT\CurrentVersion\Winlogon</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5c6b6c87-2235-4c9a-9a66-dba7f978fb21" condition="is">
+          <Context document="RegistryItem" search="RegistryItem/ValueName" type="mir"/>
+          <Content type="string">UserInit</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="1ae7904b-1848-4c76-8037-56cccbc01f9c" operator="AND">
+        <IndicatorItem id="f0381c71-edce-4e24-88e1-35cf393a9892" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir"/>
+          <Content type="string">CurrentVersion\Run</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aa075ba0-9f3a-4360-8b2c-4083f71964f6" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Text" type="mir"/>
+          <Content type="string">Start Menu\Programs\Google\Google Update.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="92af3843-0555-4513-894c-a3972dd919d3" condition="is">
+          <Context document="RegistryItem" search="RegistryItem/ValueName" type="mir"/>
+          <Content type="string">GoogleUpdate</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>

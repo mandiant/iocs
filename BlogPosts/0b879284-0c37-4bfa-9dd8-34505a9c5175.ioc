@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          0b879284-0c37-4bfa-9dd8-34505a9c5175.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="0b879284-0c37-4bfa-9dd8-34505a9c5175" last-modified="2015-01-27T21:18:07Z">
+  <short_description>PYTHON SHELLCODE (DOWNLOADER)</short_description>
+  <description>The shellcode launcher is a simple launcher which recieves an encoded shellcode buffer from its C2 server, allocates memory for it and then executes the shellcode.  The launcher is written in python and packaged with PyInstaller.  You can read more about this downloader at https://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.htmlhttps://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.html </description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-01-27T19:56:21Z</authored_date>
+  <links>
+    <link rel="category">Downloader</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="b5c921a1-56c5-45ab-9537-72581eb73e0e" operator="OR">
+      <IndicatorItem id="a89dc9cb-15a5-42e6-9e49-7a7cc9ae1bf5" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">64a17f5177157bb8c4199d38c46ec93b</Content>
+      </IndicatorItem>
+      <IndicatorItem id="452d566a-78fb-48cc-bb9e-47ae7234a1dd" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Facebook-Account.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ece0648f-532e-42ec-8f67-095aafb53ca2" condition="contains">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">80.241.223.128</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>
