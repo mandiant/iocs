@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          60a6de64-7308-4af1-9003-dc23a73fdf01.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="60a6de64-7308-4af1-9003-dc23a73fdf01" last-modified="2015-02-04T13:00:37Z">
+  <short_description>REVETON (BLOG)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "A Different Exploit Angle on Adobe's Recent Zero-Day" that can be read here: https://www.fireeye.com/blog/threat-research/2015/01/a_different_exploit.html. This IOC contains indicators for domains used to host and deliver a payload for the Angler Exploit Kit, and a Reveton ransomware payload.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-02-04T10:40:42Z</authored_date>
+  <links>
+    <link rel="category">Backdoor</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="6615da1c-91dc-44c9-a57d-6352e5309875" operator="OR">
+      <IndicatorItem id="61db257e-29ea-461f-893e-865d8a69ced3" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">6769a5b4526f3b2b7c6bebbe464f5f6b</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fa518181-2774-42d9-9359-20fd0fb3219d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">neteasymarketing.biz</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f0aac965-8a0e-4546-8258-c54a991e5c84" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">xmoqu38hasdf0opw.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a2603581-ca6b-4a61-a232-0daef893287b" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">temp\tqPx.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8ccc6a9d-92e5-472b-b41b-442c0c8c22e3" condition="contains">
+        <Context document="RegistryItem" search="RegistryItem/Path" type="mir"/>
+        <Content type="string">Software\Microsoft\Windows\CurrentVersion\ACID</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>

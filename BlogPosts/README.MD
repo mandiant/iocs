@@ -9,6 +9,10 @@ This folder contains Indicators of Compromise (IOCs) for blog posts which have n
         
         113e561e-60d2-48db-979d-02f207550125.ioc
         
+* [A Different Exploit Angle on Adobe's Recent Zero-Day] (https://www.fireeye.com/blog/threat-research/2015/01/a_different_exploit.html)
+        
+        60a6de64-7308-4af1-9003-dc23a73fdf01.ioc
+        
 * [Behind The Syrian Conflict's Digital Front Lines] (https://www.fireeye.com/blog/threat-research/2015/02/behind_the_syrianco.html)
         
         0b879284-0c37-4bfa-9dd8-34505a9c5175.ioc
