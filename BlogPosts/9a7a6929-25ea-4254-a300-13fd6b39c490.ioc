@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          9a7a6929-25ea-4254-a300-13fd6b39c490.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="9a7a6929-25ea-4254-a300-13fd6b39c490" last-modified="2015-02-05T17:07:22Z">
+  <short_description>ANATOMY OF A BRUTE FORCE CAMPAIGN (BLOG)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "Anatomy of a Brute Force Campaign: The Story of Hee Thai Limited" that can be read here https://www.fireeye.com/blog/threat-research/2015/02/anatomy_of_a_brutef.html.  This IOC contains indicators from the blog post .  The FileItem terms for this indicator are applicable to Linux hosts.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-02-04T21:44:18Z</authored_date>
+  <links>
+    <link rel="category">Backdoor</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="a277705e-403e-4e9c-b2db-10a3d99d7a5f" operator="OR">
+      <IndicatorItem id="c9b4ff07-0adf-434b-9b6c-4acc5d4cadc0" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">heethai.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dc8b4f1d-0e0e-43d4-bc98-9a66e08f477d" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">buhenge.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ad6a0caf-fb6f-4cc8-8365-aff149ba0cd7" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">rxxiaoao.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f10638c9-1e4d-414f-a409-de446293e229" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">hcxiaoao.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="07f7b53a-5b1f-4e58-9943-4bd918715434" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">info.3000uc.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="23fc1159-c223-426f-a9ab-a45de12af896" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">wangzongfacai.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c31dfa9a-bd03-4038-9ef4-0e3d5f2618f2" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">navert0p.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="84584d34-8da3-4d02-9fce-f133b9d9236a" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">dsaj2a.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7d725c9f-73c3-4024-aad5-931ddebd31c1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">dsaj2a.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8d747c3f-a6fd-4058-b35d-be13e867259f" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">dsaj2a1.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4e5414c5-5a32-49c8-9d3c-0fb08c1c44bc" condition="is">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">/etc/cron.hourly/cron.sh</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d4c319de-29ed-44e0-af60-592663550a86" condition="is">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">/etc/cron.hourly/udev.sh</Content>
+      </IndicatorItem>
+      <IndicatorItem id="418b74ed-9960-426d-bf15-0841eef2b1b6" condition="is">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">/lib/libgcc4.4.so</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c8db8e5d-ee37-488d-b5a3-98a7bdf15622" condition="is">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">/lib/libgcc4.so</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9a966d73-2755-4d9d-8700-963c69547a23" condition="is">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">/lib/libgcc.so.bak</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2a403889-6f1d-425f-8cf0-9af51fbb2262" condition="is">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">/lib/libgcc.so</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3af5c984-c041-4be8-bc80-417420a13a5a" condition="contains">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">103.41.124.</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d675f4cf-7cb9-418b-b546-80ef9f7be7d2" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">103.25.9.228</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d9cf19b5-ce2a-4334-be86-31350644d8a9" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">103.25.9.229</Content>
+      </IndicatorItem>
+      <Indicator id="6ffb459b-2ac9-498b-a726-89e6a857645c" operator="AND">
+        <IndicatorItem id="a400ddd8-777b-49c2-b7b6-2b9f24c759fd" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">/check.action?</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6ac1c992-17c1-425e-8ca9-0d65c6331e4c" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">iid=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3fc8bd6f-ffeb-4ae9-a00f-845394ee3059" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">kernel=</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="2b40852e-a932-4e9b-bd27-a41d1e4745b4" operator="AND">
+        <IndicatorItem id="653cd01f-5f67-43bb-902a-9cbe09cb0bb9" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">mod_unload</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8147abef-b593-46c3-b49f-60c2e5dde206" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">modversions</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f0d273c3-8a90-46f4-a5f7-e00d89142904" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">username</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2587f1de-ed81-42c1-9e94-766bb3a18c28" condition="contains">
+          <Context document="Network" search="Network/URI" type="network"/>
+          <Content type="string">password</Content>
+        </IndicatorItem>
+        <Indicator id="da8275cc-10f2-4d6b-9a15-94afadc8ca37" operator="OR">
+          <IndicatorItem id="54be60ea-ecdf-4401-a80f-7edbfa6f7fe1" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">/submit.action</Content>
+          </IndicatorItem>
+          <IndicatorItem id="0ad22cfa-a51f-4d45-a1ad-caa77ae821e1" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">/compiler.action</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
