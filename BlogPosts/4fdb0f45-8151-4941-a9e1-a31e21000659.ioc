@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          4fdb0f45-8151-4941-a9e1-a31e21000659.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="4fdb0f45-8151-4941-a9e1-a31e21000659" last-modified="2015-03-02T19:26:29Z">
+  <short_description>ADS GONE BAD (BLOG)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "Ads Gone Bad" that can be read here: https://www.fireeye.com/blog/threat-research/2015/03/ads_gone_bad.html. This IOC contains indicators for domains, IP addresses and a filename used for a malvertising campaign that employs malicious SWF files. The attacker used the CVE-2014-0569 exploit in order to deliver malicious payloads to victims.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-03-02T16:17:41Z</authored_date>
+  <links>
+    <link rel="category">Exploit</link>
+    <link rel="category">Downloader</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="d8f1cf3f-d6b5-49e1-a2f6-8f05ce21b19e" operator="OR">
+      <IndicatorItem id="faea31ac-920c-4513-a2ef-c1552b94f1b9" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.alltraveldaily.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8f11f953-ba99-422a-9fb0-b9972320251f" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.mensstylebook.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c4790daa-0dd7-49b8-9999-7694e4134d51" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.recipechart.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d904da6b-4178-4d46-a6eb-05d52626a075" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.highspeedtesting.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d8d0d7e3-4655-4aa5-a23c-d65a292c91af" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.smackchow.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="32495270-ffa0-4175-822c-fc6ba56a4475" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.easygoodhealth.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d0dcc9e8-9b2e-4c47-aa29-11468e6ab04f" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.1000bites.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7b84f1ac-32ee-48cf-bfc5-49141aa6f8e4" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.rawdaily.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8e6d8f26-f977-4e44-b38e-d2c1e13ccdad" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.diyfoodvids.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="34bd9b78-6773-479c-94cf-bd7575bf0477" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.worldtotravel.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a6545968-108d-45ea-9dab-74752e4b7feb" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.diybaker.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a52df07a-f9eb-4ad8-b134-1eea41fd3e1c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.trendingwoman.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b39c2db0-b893-4e83-a7fc-33d81623e6f2" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.quickmensguide.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="aeca6ecd-64fa-45aa-ad6a-0566aade623c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.citybartender.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fbdd49e0-cd6d-45af-9e10-108e057ed943" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.hometechproducts.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bcd07dc1-68a6-467a-9eab-8bb9c67da550" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.streetzsavvy.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="20ed6e55-fa57-4eec-b5dc-b72e8f7868d1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.whyresearch.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="349147f5-deb3-497f-bd15-4250a531cda3" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.moviesland.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="605baf65-c13c-4d1e-a5cd-ab3ca56deefe" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.femaleinsider.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2904c0b4-7130-4054-806f-d9acd8d854a3" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.ie-games.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fd7e45bb-de44-4f3d-bc9f-599f4de58424" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">adserver.elegantrecipes.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b806b025-0d7d-4661-a045-2105e0113f9e" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">yieidmanager.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="79d7e58f-834a-4324-a0db-e9219a523247" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">184.174.122.30</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7d522ae4-5c6e-41e6-a2dc-2266f1f3f1b6" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">184.174.124.168</Content>
+      </IndicatorItem>
+      <IndicatorItem id="34acfb7d-f167-4f61-b06b-01c112e62539" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">184.174.122.54</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ed4bcd84-fff2-4048-ac26-73db1bf8da30" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">184.174.124.169</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b1551619-cf10-40ce-8e53-f418ad6a3de7" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">198.55.119.125</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6f14a60e-48f1-4749-a25f-41efe6afb46c" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">198.55.119.126</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5d5b654b-2e9c-4cf5-8fa4-2ed37827dcde" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">66.55.129.199</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d6eb390c-11e7-46d9-81fe-4028d387e89b" condition="contains">
+        <Context document="Network" search="Network/URI" type="network"/>
+        <Content type="string">?d=300x250</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4444d4d3-910b-4ace-a11b-df3b719584da" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">ee2un066aepv4.php</Content>
+      </IndicatorItem>
+      <Indicator id="204c09c5-1001-4d02-9f01-1e87270918c0" operator="AND">
+        <Indicator id="262442e8-46b9-4991-88eb-fa90976d2bec" operator="OR">
+          <IndicatorItem id="e6ed7677-3194-4f87-8a1b-b79da28f456b" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">user_6290</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1e756110-9da8-498b-a06b-9133289cd259" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">user_6302</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator id="2f18139b-f6b9-4f7e-a152-a014c5917bd4" operator="OR">
+          <IndicatorItem id="982f932e-623f-49f2-ac84-01bbd19e2fa7" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">camp_3698</Content>
+          </IndicatorItem>
+          <IndicatorItem id="baf46317-ae6d-4eb4-8427-601f955f4526" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">camp_3693</Content>
+          </IndicatorItem>
+          <IndicatorItem id="256834da-3d03-43f6-b1b8-b3478d69b873" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">camp_3674</Content>
+          </IndicatorItem>
+          <IndicatorItem id="57095c6a-946c-477f-b273-6e875be279c2" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">camp_3709</Content>
+          </IndicatorItem>
+          <IndicatorItem id="bae8713b-aeb9-4f10-9d29-f474a8b113f4" condition="contains">
+            <Context document="Network" search="Network/URI" type="network"/>
+            <Content type="string">camp_3830</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
