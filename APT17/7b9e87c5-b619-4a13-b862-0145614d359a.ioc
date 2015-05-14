@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          7b9e87c5-b619-4a13-b862-0145614d359a.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="7b9e87c5-b619-4a13-b862-0145614d359a" last-modified="2015-05-13T18:16:33Z">
+  <short_description>BLACKCOFFEE (FAMILY)</short_description>
+  <description>This IOC contains indicators detailed in the whitepaper "Hiding in Plain Sight: FireEye and Microsoft Expose Chinese APT Group's Obfuscation Tactic". The whitepaper can be read here: LINK.  This IOC contains indicators for the BLACKCOFFEE malware family that is attributed to APT17.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2014-10-15T21:02:19</authored_date>
+  <links>
+    <link rel="category">Backdoor</link>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT17</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="5d0b0faa-aa4f-4fd7-9688-4b8806279ab4" operator="OR">
+      <IndicatorItem id="84befe7a-47de-4f16-b4ea-e1e078bc4623" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">de56eb5046e518e266e67585afa34612</Content>
+      </IndicatorItem>
+      <IndicatorItem id="830756c1-96d2-4269-aa10-b75c77ee06f9" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">195ade342a6a4ea0a58cfbfb43dc64cb</Content>
+      </IndicatorItem>
+      <IndicatorItem id="96c79a43-06f3-43ec-843e-d71d207dc028" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">4c21336dad66ebed2f7ee45d41e6cada</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2f8bf692-a027-4929-8c47-08a5cf8a5e36" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">0370002227619c205402c48bde4332f6</Content>
+      </IndicatorItem>
+      <IndicatorItem id="77dbb6cb-2e4f-4cc0-a76d-14bb45de268e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">ac169b7d4708c6fa7fee9be5f7576414</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fddce6b2-39c0-4e30-907f-cd3f0e9945f3" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5f2fcba8bd42712d9975da208a1cc0ca</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ba46f291-6688-4d07-be54-d7105477f2ba" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5d16e5ee1cc571125ab1c44ecd47a04a</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9a2e63a3-fe26-498e-b905-2075a2892356" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">da88e711e4ffc7c617986fc585bce305</Content>
+      </IndicatorItem>
+      <IndicatorItem id="69526072-b5ba-4a6c-9247-821ddf1a93cb" condition="is">
+        <Context document="ProcessItem" search="ProcessItem/HandleList/Handle/Name" type="mir"/>
+        <Content type="string">358bd08946</Content>
+        <Comment>Process Handle Type: events</Comment>
+      </IndicatorItem>
+      <IndicatorItem id="77521051-2713-4389-ab19-c7c96f020abe" condition="is">
+        <Context document="ProcessItem" search="ProcessItem/HandleList/Handle/Name" type="mir"/>
+        <Content type="string">PnP_No_Management</Content>
+        <Comment>Process Handle Type: events</Comment>
+      </IndicatorItem>
+      <IndicatorItem id="dc9b0e69-8b9d-4412-ab38-2ad77117d442" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">translate.wordraference.com</Content>
+      </IndicatorItem>
+      <IndicatorItem id="82b1ac0e-a1fe-4a66-9c6f-90e2bf9db87c" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">news.jusched.net</Content>
+      </IndicatorItem>
+      <IndicatorItem id="98b14a1d-3840-4d47-87d2-c1e188c49f77" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">c016af303b5729e57d0e6563b3c51be4</Content>
+      </IndicatorItem>
+      <IndicatorItem id="10f657dd-dc57-4deb-90a7-e28bcb1f0bb0" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">130.184.156.62</Content>
+      </IndicatorItem>
+      <IndicatorItem id="7b02a58e-f85e-48ac-8447-04b49f8bf004" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">69.80.72.165</Content>
+      </IndicatorItem>
+      <IndicatorItem id="0c45f2c0-a19d-411a-9867-cb3b1d6c31e5" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">110.45.151.43</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dd246068-e288-4102-baae-56cf12ba73e6" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">121.101.73.231</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b14c6f5f-ad5f-431b-8f31-44f8f3cdbecf" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">103.250.72.39</Content>
+      </IndicatorItem>
+      <IndicatorItem id="99fc88d3-f0d7-4358-b7ce-1e24d880af60" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">148.251.71.75</Content>
+      </IndicatorItem>
+      <IndicatorItem id="67625235-50bb-456f-9add-8eb7dc745415" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">217.198.143.40</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a41309c7-e682-4fd6-8157-f4c4c990b369" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">178.62.20.110</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3740b1d3-3f28-4680-8f32-feb0a50d2244" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">175.126.104.175</Content>
+      </IndicatorItem>
+      <IndicatorItem id="abab376f-2540-436c-aa6d-0bff1c9e0e98" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">103.250.72.254</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b2620828-a3c0-4bb8-97f1-7cfe3ef5975b" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">1.234.52.111</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f5eea167-28e5-4914-8b87-4c2b269d22b5" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">0b757d3dc43dab594262579226842531</Content>
+      </IndicatorItem>
+    </Indicator>
+  </definition>
+</ioc>
