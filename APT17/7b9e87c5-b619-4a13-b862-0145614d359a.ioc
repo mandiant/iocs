@@ -19,7 +19,7 @@
 -->
 <ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="7b9e87c5-b619-4a13-b862-0145614d359a" last-modified="2015-05-13T18:16:33Z">
   <short_description>BLACKCOFFEE (FAMILY)</short_description>
-  <description>This IOC contains indicators detailed in the whitepaper "Hiding in Plain Sight: FireEye and Microsoft Expose Chinese APT Group's Obfuscation Tactic". The whitepaper can be read here: LINK.  This IOC contains indicators for the BLACKCOFFEE malware family that is attributed to APT17.</description>
+  <description>This IOC contains indicators detailed in the whitepaper "Hiding in Plain Sight: FireEye and Microsoft Expose Chinese APT Group's Obfuscation Tactic". The whitepaper can be read here: https://www.fireeye.com/blog/threat-research/2015/05/hiding_in_plain_sigh.html.  This IOC contains indicators for the BLACKCOFFEE malware family that is attributed to APT17.</description>
   <keywords/>
   <authored_by>FireEye</authored_by>
   <authored_date>2014-10-15T21:02:19</authored_date>
