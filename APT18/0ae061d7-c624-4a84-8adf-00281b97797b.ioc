@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          0ae061d7-c624-4a84-8adf-00281b97797b.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.mandiant.com/2010/ioc" id="0ae061d7-c624-4a84-8adf-00281b97797b" last-modified="2015-07-12T02:56:02Z">
+  <short_description>DEMONSTRATING HUSTLE - APT18 (BLOG)</short_description>
+  <description>This IOC contains indicators detailed in the blog post "Demonstrating Hustle" that can be read here: http://www.fireeye.com/blog. This IOC contains indicators for a spearphishing campaign carried out by APT18.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-07-10T21:24:04Z</authored_date>
+  <links>
+    <link rel="threatcategory">APT</link>
+    <link rel="threatgroup">APT18</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="427a68ab-6bd3-4f55-8be8-da463d173959" operator="OR">
+      <IndicatorItem id="9b2784ef-4e0e-44d1-a6c3-416f4e28c323" condition="contains">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">137.175.4.132</Content>
+      </IndicatorItem>
+      <IndicatorItem id="637c784f-ee5f-4fdc-9109-54cb70b4550e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">079a440bee0f86d8a59ebc5c4b523a07</Content>
+      </IndicatorItem>
+      <IndicatorItem id="cdafa151-bbfb-4f47-8d3e-8c90a82b42b6" condition="contains">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">223.25.233.248</Content>
+      </IndicatorItem>
+      <Indicator id="a181f9e8-1c17-4a8b-a449-a7d4040f7a97" operator="AND">
+        <IndicatorItem id="3c7d339e-57d8-45a0-b109-e989259ba040" condition="is">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">movie.swf</Content>
+        </IndicatorItem>
+        <IndicatorItem id="413906a2-d3e3-4e99-aa79-bba242fbe5b1" condition="is">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">214976</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
