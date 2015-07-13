@@ -19,7 +19,7 @@
 -->
 <ioc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.mandiant.com/2010/ioc" id="0ae061d7-c624-4a84-8adf-00281b97797b" last-modified="2015-07-12T02:56:02Z">
   <short_description>DEMONSTRATING HUSTLE - APT18 (BLOG)</short_description>
-  <description>This IOC contains indicators detailed in the blog post "Demonstrating Hustle" that can be read here: http://www.fireeye.com/blog. This IOC contains indicators for a spearphishing campaign carried out by APT18.</description>
+  <description>This IOC contains indicators detailed in the blog post "Demonstrating Hustle" that can be read here: https://www.fireeye.com/blog/threat-research/2015/07/demonstrating_hustle.html. This IOC contains indicators for a spearphishing campaign carried out by APT18.</description>
   <keywords/>
   <authored_by>FireEye</authored_by>
   <authored_date>2015-07-10T21:24:04Z</authored_date>
