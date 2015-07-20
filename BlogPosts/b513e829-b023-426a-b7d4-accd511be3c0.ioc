@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          b513e829-b023-426a-b7d4-accd511be3c0.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2015 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.mandiant.com/2010/ioc" id="b513e829-b023-426a-b7d4-accd511be3c0" last-modified="2015-07-20T19:48:46Z">
+  <short_description>CVE-2015-5122 SOGU (BLOG)</short_description>
+  <description>This IOC detailed in the blog post "Second Adobe Flash Zero-Day CVE-2015-5122 from HackingTeam Exploited in Strategic Web Compromise Targeting Japanese Victims" that can be read here:https://www.fireeye.com/blog/threat-research/2015/07/second_adobe_flashz.html. This IOC contains indicators for domains, IP addresses and file names used for a campaign that employs malicious SWF files. The attacker used the CVE-2015-5122 exploit in order to deliver malicious SOGU payloads to victims.</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-07-16T19:11:59Z</authored_date>
+  <links>
+    <link rel="category">Backdoor</link>
+    <link rel="threatcategory">APT</link>
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="52027016-4dae-49b9-b569-8f4c8c6888ba" operator="OR">
+      <IndicatorItem id="9e6eba69-a5d9-4443-a606-50f116d3c7e2" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">5a22e5aee4da2fe363b77f1351265a00</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9a3f91fa-4c59-4170-905f-0445a6a37983" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">amxil.opmuert.org</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3cbd3d52-bfd0-44dd-8656-edce73dad373" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir"/>
+        <Content type="IP">54.169.89.240</Content>
+      </IndicatorItem>
+      <IndicatorItem id="97d81711-ccd4-485f-983e-edd278aa7949" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">www.ihcsa.or.jp</Content>
+      </IndicatorItem>
+      <IndicatorItem id="0a9b76e3-bb50-4404-92ad-d5148ce4a5fd" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir"/>
+        <Content type="string">cosmetech.co.jp</Content>
+      </IndicatorItem>
+      <IndicatorItem id="dad5ffd6-2572-4c88-90ce-0e8e1e3ca84d" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">appdata\local\rdws.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="92c6b00b-d3e2-4b04-877f-5b4f37c4f5e0" condition="contains">
+        <Context document="FileItem" search="FileItem/FullPath" type="mir"/>
+        <Content type="string">application data\rdws.exe</Content>
+      </IndicatorItem>
+      <Indicator id="21b9ac7f-ee7a-45b7-a4f9-563d0fcdb9dd" operator="AND">
+        <IndicatorItem id="379ce847-c554-4263-ac02-0f6a3be164f1" condition="is">
+          <Context document="FileItem" search="FileItem/SizeInBytes" type="mir"/>
+          <Content type="int">413696</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d0ed3395-e6ff-4f87-aceb-9f03506d4aa7" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/PETimeStamp" type="mir"/>
+          <Content type="date">2015-07-13T08:11:01Z</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="25f7d36e-c109-4cdf-8f33-853a9806fea7" operator="AND">
+        <IndicatorItem id="7b219d80-23d6-4b7b-aedb-1f9dd4f95cbe" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/HandleList/Handle/Name" type="mir"/>
+          <Content type="string">ZucFCoeHa8KvZcj1FO838HN</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2fd2867a-30f2-4daf-8650-83498a5bf51d" condition="contains">
+          <Context document="ProcessItem" search="ProcessItem/HandleList/Handle/Name" type="mir"/>
+          <Content type="string">*wz4xSdmm1</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>

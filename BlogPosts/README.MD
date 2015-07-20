@@ -29,3 +29,7 @@ This folder contains Indicators of Compromise (IOCs) for blog posts which have n
         
         4fdb0f45-8151-4941-a9e1-a31e21000659.ioc
         
+* [Second Adobe Flash Zero-Day CVE-2015-5122 from HackingTeam Exploited in Strategic Web Compromise Targeting Japanese Victims] (https://www.fireeye.com/blog/threat-research/2015/07/second_adobe_flashz.html)
+        
+        b513e829-b023-426a-b7d4-accd511be3c0.ioc
+        
