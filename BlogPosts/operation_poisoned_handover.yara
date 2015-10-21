@@ -4,7 +4,7 @@ rule callTogether_certificate
     author = "Fireeye Labs"
     version = "1.0"
     reference_hash = "d08e038d318b94764d199d7a85047637"
-    description = “detects binaries signed with the CallTogether certificate”
+    description = "detects binaries signed with the CallTogether certificate"
   strings:
     $serial = {452156C3B3FB0176365BDB5B7715BC4C}
     $o = "CallTogether, Inc."
