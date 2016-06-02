@@ -33,3 +33,8 @@ This folder contains Indicators of Compromise (IOCs) for blog posts which have n
         
         b513e829-b023-426a-b7d4-accd511be3c0.ioc
         
+* [IRONGATE ICS Malware: Nothing to See Here, Masking Malicious Activity on SCADA Systems] (https://www.fireeye.com/blog/threat-research/2016/06/irongate_ics_malware.html)
+
+	9cee306d-5441-4cd3-932d-f3119752634c.ioc
+
+

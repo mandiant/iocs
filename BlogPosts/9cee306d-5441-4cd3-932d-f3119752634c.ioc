@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    TITLE:          9cee306d-5441-4cd3-932d-f3119752634c.ioc
+    VERSION:        1.0
+    DESCRIPTION:    OpenIOC file
+    LICENSE:        Copyright 2016 FireEye Corporation.  Licensed under the Apache 2.0 license.
+
+    FireEye licenses this file to you under the Apache License, Version
+    2.0 (the "License"); you may not use this file except in compliance with the
+    License.  You may obtain a copy of the License at:
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    implied.  See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<ioc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.mandiant.com/2010/ioc" id="9cee306d-5441-4cd3-932d-f3119752634c" last-modified="2016-05-18T14:11:05Z">
+  <short_description>IRONGATE (FAMILY)</short_description>
+  <description>IRONGATE is a tool that targets biogas.exe programs by replacing the Step7ConMgr.dll library with a malicious one. The malicious Step7ConMgr.dll library performs DLL hijacking where it records data and replays it back to the parent program. The malicious Step7ConMgr.dll library also sends data to what is suspected to be the simulated or controlled device. This IOC contains indicators detailed in the blog post "IRONGATE ICS Malware: Nothing to See Here, Masking Malicious Activity on SCADA Systems" that can be read here: https://www.fireeye.com/blog/threat-research/2016/06/irongate_ics_malware.html</description>
+  <keywords/>
+  <authored_by>FireEye</authored_by>
+  <authored_date>2015-08-21T16:39:02Z</authored_date>
+  <links>
+    <link rel="family">IRONGATE</link
+    <link rel="license">Apache 2.0</link>
+  </links>
+  <definition>
+    <Indicator id="7d81dee9-77fb-410e-a821-5e9d39bfabe6" operator="OR">
+      <IndicatorItem id="b36f51d3-2c2a-4ff0-9f70-ceb24d1c120c" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">EDA021ACACA81AE99E39ECCDA0163295</Content>
+      </IndicatorItem>
+      <IndicatorItem id="76153727-6cb2-419a-b29f-1280f088aefd" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">9B588ADB1D0AE72CEB4051031FD1F1F3</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b4e64774-7a0f-4ebb-8f92-40264bb48645" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">EC07A5ECB182960777007AFE2C077A1D</Content>
+      </IndicatorItem>
+      <IndicatorItem id="8d808d80-9a86-499f-aae7-007be2df759e" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">026BC58300DE02455937CEF46405F065</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c9577906-eb33-4571-948c-c2731604885d" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">A79596BCCA537FA3FA45037F4855FD00</Content>
+      </IndicatorItem>
+      <IndicatorItem id="712a5add-d520-4343-972c-1827057c4610" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">Step7ConMgr.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="07ba65a9-42b0-4727-b4a2-d429f5cda4c3" condition="contains">
+        <Context document="ProcessItem" search="ProcessItem/arguments" type="mir"/>
+        <Content type="string">scomma scxrt2.ini</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a0b943c0-40eb-4369-8599-21db0a8f74e5" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">957581FB38A4E76E84F60E2BB19B9499</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1f25796d-bbf9-4fab-af15-2eed987d1322" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">75D118996F5190EDAFCA1B1904A7EEA8</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b35dcc70-9b2f-459b-a839-d18dacda3e7f" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">9F37E1EA08E6A4AE03E9FEBA6D1F6259</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e926760c-3557-4b00-8e63-8b7410737818" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">3152F21D701A2397E7B22711B8019B82</Content>
+      </IndicatorItem>
+      <IndicatorItem id="b0e42ee0-0e49-41f8-8f47-0164c5d18537" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">EF2A97512FDB45CD26089AD2FF61F1CC</Content>
+      </IndicatorItem>
+      <IndicatorItem id="fec86baa-2f43-486c-9e9e-72949dd7bf49" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">41906403206EA5C7DCDBFAE230ADD9FA</Content>
+      </IndicatorItem>
+      <IndicatorItem id="5d509a32-64a1-4a2e-b9b0-957502b7c626" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">874F7BCAB71F4745EA6CDA2E2FB5A78C</Content>
+      </IndicatorItem>
+      <IndicatorItem id="bcb208f3-3897-43a2-9308-877ae8d9971f" condition="is">
+        <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+        <Content type="md5">7C51474E6560C51DFC815D4A227BA1AA</Content>
+      </IndicatorItem>
+      <IndicatorItem id="088a59d1-d273-4306-ae7f-1e68dcff270a" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">update_no_pipe.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="02f21719-3789-4c39-8c79-d8649207b06b" condition="is">
+        <Context document="FileItem" search="FileItem/PEInfo/VersionInfoList/VersionInfoItem/OriginalFilename" type="mir"/>
+        <Content type="string">PackagingModule.exe</Content>
+      </IndicatorItem>
+      <IndicatorItem id="c3056268-4e61-4b5e-8762-ebfa7b290179" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+        <Content type="string">scxrt2.ini</Content>
+      </IndicatorItem>
+      <Indicator id="4b8e8c05-a8f9-4aff-9b7b-bd7301e1cfd7" operator="AND">
+        <IndicatorItem id="317dc9d2-bd92-4fb1-87b1-cb5a158a4828" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+          <Content type="md5">1F338BDD92F08803A2AC7022A34D98FD</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ec96b850-238a-4b1a-a40e-717b88522191" condition="is">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">install.exe</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="7ff36953-3632-4053-ab48-f9b90560f7ce" operator="AND">
+        <IndicatorItem id="c54218c1-ff59-46f8-9d1d-cc8be7e0b2cd" condition="is">
+          <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+          <Content type="md5">7A0C1017E6B5BB5DC776B3B883A1D0E0</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1964e0a6-8050-4ed6-8df2-98325c62c680" condition="is">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">audiodg.exe</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator id="8208f833-17d9-4844-96ce-63c1c79db4ab" operator="AND">
+        <IndicatorItem id="7340b48c-9e4e-4392-b32f-3efc1e9fbe51" condition="is">
+          <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+          <Content type="string">scada.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7e125051-f0f0-45f0-b1ce-07b16bec92c2" condition="is">
+          <Context document="FileItem" search="FileItem/PEInfo/ImportedModules/Module/Name" type="mir"/>
+          <Content type="string">mscoree.dll</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
